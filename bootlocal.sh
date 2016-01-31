@@ -1,6 +1,10 @@
 cp /var/lib/boot2docker/docker-compose /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+groupadd -g 33 www-data
+useradd -u 33 -g 33 www-data
+
+
 mkdir /var/www
 mount -t vboxsf -o uid=33,gid=33 www /var/www
 
